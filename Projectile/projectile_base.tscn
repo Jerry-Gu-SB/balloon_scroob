@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvbx7t7d7iyte"]
+
+[ext_resource type="Script" uid="uid://ln7cb86harty" path="res://Projectile/projectile_physics_handler.gd" id="2_wt2gt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wt2gt"]
+
+[node name="Projectile Base" type="Node2D"]
+
+[node name="Physics Handler" type="Node2D" parent="."]
+script = ExtResource("2_wt2gt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.345, 0.345)
+shape = SubResource("CircleShape2D_wt2gt")
