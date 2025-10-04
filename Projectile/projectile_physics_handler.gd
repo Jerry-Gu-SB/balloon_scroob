@@ -1,12 +1,11 @@
-extends Node2D
+extends Node
 
-@onready var projectile_area2d = $"../Area2D"
-
-@export var projectile_velocity : float = 1
+@export var data : ProjectileData
+var parent_node : Node2D
 
 func _ready() -> void:
-	return
-
+	parent_node = get_parent()
+	
 func _process(delta) -> void:
-	projectile_area2d.position += projectile_area2d.transform.x * projectile_velocity * delta
+	parent_node.position += parent_node.transform.x * data.projectile_velocity * delta
 	return

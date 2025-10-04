@@ -1,16 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvbx7t7d7iyte"]
+[gd_scene load_steps=7 format=3 uid="uid://bvbx7t7d7iyte"]
 
+[ext_resource type="Script" uid="uid://be0afv1joy7rn" path="res://Projectile/projectile_sprite_2d.gd" id="2_6k7vn"]
+[ext_resource type="Texture2D" uid="uid://xdlyoeacj4yt" path="res://icon.svg" id="2_phnyd"]
 [ext_resource type="Script" uid="uid://ln7cb86harty" path="res://Projectile/projectile_physics_handler.gd" id="2_wt2gt"]
+[ext_resource type="Script" uid="uid://jxso8tnsqhfw" path="res://Projectile/projectile_collision_handler.gd" id="3_phnyd"]
+[ext_resource type="Resource" uid="uid://it4jllx7p3o8" path="res://Projectile/Resources/Default.tres" id="4_kbhig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt2gt"]
 
 [node name="Projectile Base" type="Node2D"]
-
-[node name="Physics Handler" type="Node2D" parent="."]
-script = ExtResource("2_wt2gt")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(0.345, 0.345)
 shape = SubResource("CircleShape2D_wt2gt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.241, 0.05)
+texture = ExtResource("2_phnyd")
+script = ExtResource("2_6k7vn")
+data = ExtResource("4_kbhig")
+
+[node name="Physics Handler" type="Node" parent="."]
+script = ExtResource("2_wt2gt")
+data = ExtResource("4_kbhig")
+
+[node name="Collision Handler" type="Node" parent="."]
+script = ExtResource("3_phnyd")
+data = ExtResource("4_kbhig")
