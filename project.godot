@@ -15,6 +15,10 @@ run/main_scene="uid://b4u7oo627x5br"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*res://event_bus.gd"
+
 [input]
 
 ui_left={

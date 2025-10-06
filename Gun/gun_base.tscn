@@ -1,5 +1,24 @@
-[gd_scene format=3 uid="uid://ce1gxf8ua0txu"]
+[gd_scene load_steps=6 format=3 uid="uid://ce1gxf8ua0txu"]
+
+[ext_resource type="Script" uid="uid://yhdravnhk5i0" path="res://Gun/Scripts/gun_sprite_2d.gd" id="1_5k3x2"]
+[ext_resource type="Texture2D" uid="uid://bsjwe2qy75y1d" path="res://Gun/Assets/Static Gun Sprites/Glock - P80 [64x48].png" id="1_o176h"]
+[ext_resource type="Resource" uid="uid://fhsn1b5bckdt" path="res://Gun/Resources/gun_default.tres" id="2_rj0ur"]
+[ext_resource type="Script" uid="uid://dujjxfd7eannm" path="res://Gun/Scripts/firing_handler.gd" id="3_d0n3f"]
+[ext_resource type="Script" uid="uid://srh4ol6pqiij" path="res://Gun/gun_rotator.gd" id="4_mxmrn"]
 
 [node name="Gun Base" type="Node2D"]
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o176h")
+script = ExtResource("1_5k3x2")
+data = ExtResource("2_rj0ur")
+
+[node name="Firing Handler" type="Node" parent="." node_paths=PackedStringArray("fire_point")]
+script = ExtResource("3_d0n3f")
+data = ExtResource("2_rj0ur")
+fire_point = NodePath("../Marker2D")
+
+[node name="Gun Rotator" type="Node2D" parent="."]
+script = ExtResource("4_mxmrn")

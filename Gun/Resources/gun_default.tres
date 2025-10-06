@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GunData" load_steps=4 format=3 uid="uid://fhsn1b5bckdt"]
+
+[ext_resource type="PackedScene" uid="uid://bvbx7t7d7iyte" path="res://Projectile/projectile_base.tscn" id="1_7m2yp"]
+[ext_resource type="Script" uid="uid://xumt1mfj1rgs" path="res://Gun/Scripts/gun_properties.gd" id="1_mwfdk"]
+[ext_resource type="Texture2D" uid="uid://bsjwe2qy75y1d" path="res://Gun/Assets/Static Gun Sprites/Glock - P80 [64x48].png" id="3_87fbo"]
+
+[resource]
+script = ExtResource("1_mwfdk")
+projectile = ExtResource("1_7m2yp")
+sprite_texture = ExtResource("3_87fbo")
+metadata/_custom_type_script = "uid://xumt1mfj1rgs"

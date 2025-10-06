@@ -14,8 +14,8 @@ func update(input_vector : Vector2, character_body : CharacterBody2D) -> void:
 	apply_physics(character_body)
 	return
 
-func apply_impulse(impulse_vector : Vector2) -> void:
-	velocity += impulse_vector
+func apply_impulse(impulse_vector_normalized : Vector2, impulse_strength : float) -> void:
+	velocity += impulse_vector_normalized * impulse_strength
 	return
 
 func resolve_input(input_vector : Vector2) -> void:

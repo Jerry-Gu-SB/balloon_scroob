@@ -7,7 +7,7 @@ extends Node2D
 var current_input : Vector2
 
 func _ready():
-	input_handler.connect("left_click", process_left_click)
+	EventBus.left_click.connect(process_left_click)
 	
 func _process(_delta : float) -> void:
 	current_input = input_handler.update()

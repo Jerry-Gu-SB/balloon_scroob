@@ -1,7 +1,5 @@
 extends Node2D
 
-signal left_click(world_position)
-
 func update() -> Vector2:
 	var input_vector := Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -15,4 +13,5 @@ func update() -> Vector2:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			left_click.emit(get_global_mouse_position())
+			EventBus.left_click.emit(get_global_mouse_position())
+			
