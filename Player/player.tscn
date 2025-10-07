@@ -15,22 +15,10 @@ script = ExtResource("1_4ntmi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Aiming Reticle" type="Sprite2D" parent="."]
-scale = Vector2(0.09, 0.09)
-skew = 0.5794493
-texture = ExtResource("2_gwnis")
-script = ExtResource("5_k53q1")
-
 [node name="Weapon Socket" type="Node2D" parent="."]
 script = ExtResource("4_vtle1")
 
 [node name="Gun Base" parent="Weapon Socket" instance=ExtResource("4_fhl08")]
-
-[node name="Input Handler" type="Node2D" parent="."]
-script = ExtResource("1_4flbx")
-
-[node name="Physics Handler" type="Node" parent="."]
-script = ExtResource("3_btcbx")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
@@ -40,3 +28,15 @@ shape = SubResource("CapsuleShape2D_btcbx")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.140625, 0.23437499)
 texture = ExtResource("2_gwnis")
+
+[node name="Aiming Reticle" type="Sprite2D" parent="."]
+scale = Vector2(0.09, 0.09)
+skew = 0.5794493
+texture = ExtResource("2_gwnis")
+script = ExtResource("5_k53q1")
+
+[node name="Physics Handler" type="Node" parent="."]
+script = ExtResource("3_btcbx")
+
+[node name="Input Handler" type="Node2D" parent="."]
+script = ExtResource("1_4flbx")

@@ -1,9 +1,9 @@
 extends Node
 
 var velocity : Vector2 = Vector2.ZERO
-var gravity : Vector2 = Vector2(0.0, -.1)
+var gravity : Vector2 = Vector2(0.0, -1.05)
 
-const AIR_DRAG : Vector2 = Vector2(1, 1)
+const AIR_DRAG : float = .99
 const INPUT_MULTIPLYER = 2.5
 const MAX_SPEED = 250
 
@@ -26,15 +26,8 @@ func resolve_input(input_vector : Vector2) -> void:
 	
 func resolve_environmental_forces() -> void:
 	velocity += gravity
-	velocity[0] = move_towards_zero(velocity[0], AIR_DRAG[0])
-	velocity[1] = move_towards_zero(velocity[1], AIR_DRAG[1])
+	velocity *= AIR_DRAG
 	
 func apply_physics(character_body : CharacterBody2D) -> void:
 	character_body.velocity = velocity
 	character_body.move_and_slide()
-	
-func move_towards_zero(value: float, step: float) -> float:
-	if abs(value) <= step:
-		return 0.0
-	return value - step * sign(value)
-	
