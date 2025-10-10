@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 
 EventBus="*res://event_bus.gd"
 
+[display]
+
+window/size/viewport_width=256
+window/size/viewport_height=256
+window/stretch/mode="viewport"
+window/handheld/orientation=1
+
 [input]
 
 ui_left={
@@ -58,3 +65,7 @@ ui_down={
 
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Hazards"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

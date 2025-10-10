@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6blyfeog43lr"]
+
+[ext_resource type="PackedScene" uid="uid://ce1gxf8ua0txu" path="res://Guns/Pistol/pistol.tscn" id="1_327so"]
+[ext_resource type="Resource" uid="uid://bmn1ldw2g4fjn" path="res://Guns/Resources/gun_revolver.tres" id="2_5b321"]
+[ext_resource type="Texture2D" uid="uid://gf2lbvinb6i4" path="res://Guns/Assets/Static Gun Sprites/Revolver - Colt 45 [64x32].png" id="2_qqhwn"]
+
+[node name="Revolver" instance=ExtResource("1_327so")]
+gun_data = ExtResource("2_5b321")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_qqhwn")
+
+[node name="Marker2D" parent="Sprite2D" index="0"]
+position = Vector2(16, -3)

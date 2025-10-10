@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ProjectileData" load_steps=3 format=3 uid="uid://it4jllx7p3o8"]
+
+[ext_resource type="Script" uid="uid://bjgd0yderhrlv" path="res://Projectile/Resources/projectile_properties.gd" id="1_q4joj"]
+[ext_resource type="Texture2D" uid="uid://dnorbckppjofh" path="res://Projectile/Assets/Glock - P80/Bullet.png" id="2_rq2tt"]
+
+[resource]
+script = ExtResource("1_q4joj")
+sprite_texture = ExtResource("2_rq2tt")
+metadata/_custom_type_script = "uid://bjgd0yderhrlv"

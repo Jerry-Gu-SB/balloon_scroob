@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvbx7t7d7iyte"]
+
+[ext_resource type="Script" uid="uid://bxjaw58pq1qdr" path="res://Projectile/Scripts/projectile_pistol_manager.gd" id="1_ch1br"]
+[ext_resource type="Texture2D" uid="uid://dnorbckppjofh" path="res://Projectile/Assets/Glock - P80/Bullet.png" id="2_r1tnx"]
+[ext_resource type="Script" uid="uid://be0afv1joy7rn" path="res://Projectile/Scripts/projectile_sprite_2d.gd" id="3_cq2fg"]
+[ext_resource type="Resource" uid="uid://it4jllx7p3o8" path="res://Projectile/Resources/projectile_pistol.tres" id="4_773rv"]
+[ext_resource type="Script" uid="uid://ln7cb86harty" path="res://Projectile/Scripts/projectile_physics_handler.gd" id="5_v5cwq"]
+[ext_resource type="Script" uid="uid://jxso8tnsqhfw" path="res://Projectile/Scripts/projectile_collision_handler.gd" id="6_fnyh8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wt2gt"]
+
+[node name="Projectile Base" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_ch1br")
+projectile_data = ExtResource("4_773rv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.345, 0.345)
+shape = SubResource("CircleShape2D_wt2gt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r1tnx")
+script = ExtResource("3_cq2fg")
+
+[node name="Physics Handler" type="Node" parent="."]
+script = ExtResource("5_v5cwq")
+
+[node name="Collision Handler" type="Node" parent="."]
+script = ExtResource("6_fnyh8")

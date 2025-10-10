@@ -1,16 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3253vymfgnrt"]
+[gd_scene load_steps=10 format=3 uid="uid://c3253vymfgnrt"]
 
 [ext_resource type="Script" uid="uid://j01nev2pnnox" path="res://Player/Scripts/player_input_handler.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d027m67k7cfdw" path="res://Player/Scripts/player_manager.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://xdlyoeacj4yt" path="res://icon.svg" id="2_gwnis"]
 [ext_resource type="Script" uid="uid://b477el4qtgib5" path="res://Player/Scripts/player_physics_handler.gd" id="3_btcbx"]
-[ext_resource type="PackedScene" uid="uid://ce1gxf8ua0txu" path="res://Gun/gun_base.tscn" id="4_fhl08"]
+[ext_resource type="PackedScene" uid="uid://b6blyfeog43lr" path="res://Guns/Revolver/revolver.tscn" id="3_od3ui"]
 [ext_resource type="Script" uid="uid://do5lprfffkta8" path="res://Player/Scripts/player_weapon_socket.gd" id="4_vtle1"]
 [ext_resource type="Script" uid="uid://bb4o3ov63xsq1" path="res://Player/Scripts/player_aiming_reticle_sprite.gd" id="5_k53q1"]
+[ext_resource type="Texture2D" uid="uid://d0t215cctw73d" path="res://Player/Assets/Player_Reticle.svg" id="5_od3ui"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btcbx"]
 
 [node name="Player" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_4ntmi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -18,7 +20,7 @@ script = ExtResource("1_4ntmi")
 [node name="Weapon Socket" type="Node2D" parent="."]
 script = ExtResource("4_vtle1")
 
-[node name="Gun Base" parent="Weapon Socket" instance=ExtResource("4_fhl08")]
+[node name="Revolver" parent="Weapon Socket" instance=ExtResource("3_od3ui")]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
@@ -26,13 +28,12 @@ script = ExtResource("4_vtle1")
 shape = SubResource("CapsuleShape2D_btcbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+z_index = -1
 scale = Vector2(0.140625, 0.23437499)
 texture = ExtResource("2_gwnis")
 
 [node name="Aiming Reticle" type="Sprite2D" parent="."]
-scale = Vector2(0.09, 0.09)
-skew = 0.5794493
-texture = ExtResource("2_gwnis")
+texture = ExtResource("5_od3ui")
 script = ExtResource("5_k53q1")
 
 [node name="Physics Handler" type="Node" parent="."]

@@ -1,6 +1,5 @@
 extends Sprite2D
 
-@export var data : ProjectileData
-
 func _ready() -> void:
-	self.texture = data.sprite_texture
+	var parent : ProjectileProvider = get_parent()
+	self.texture = parent.get_projectile_data().sprite_texture

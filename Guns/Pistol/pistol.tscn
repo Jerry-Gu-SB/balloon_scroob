@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://ce1gxf8ua0txu"]
+
+[ext_resource type="Script" uid="uid://bnexhvcro1c24" path="res://Guns/Pistol/gun_pistol_manager.gd" id="1_5xv0r"]
+[ext_resource type="Resource" uid="uid://fhsn1b5bckdt" path="res://Guns/Resources/gun_pistol.tres" id="2_tjpvq"]
+[ext_resource type="Texture2D" uid="uid://bsjwe2qy75y1d" path="res://Guns/Assets/Static Gun Sprites/Glock - P80 [64x48].png" id="3_vk0q8"]
+[ext_resource type="Script" uid="uid://yhdravnhk5i0" path="res://Guns/Scripts/gun_sprite_2d.gd" id="4_h6l0j"]
+[ext_resource type="Script" uid="uid://dujjxfd7eannm" path="res://Guns/Scripts/gun_firing_handler.gd" id="5_xhpyn"]
+
+[node name="Pistol" type="Node2D"]
+script = ExtResource("1_5xv0r")
+gun_data = ExtResource("2_tjpvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_vk0q8")
+script = ExtResource("4_h6l0j")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
+position = Vector2(17, -12)
+
+[node name="Firing Handler" type="Node" parent="." node_paths=PackedStringArray("fire_point")]
+script = ExtResource("5_xhpyn")
+fire_point = NodePath("../Sprite2D/Marker2D")

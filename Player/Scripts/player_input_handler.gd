@@ -13,5 +13,5 @@ func update() -> Vector2:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			EventBus.left_click.emit(get_global_mouse_position())
+			EventBus.left_click.emit()
 			

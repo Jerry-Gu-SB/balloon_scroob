@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkm348765cq8n" path="res://Map/Map.tscn" id="2_pyidc"]
 
 [node name="Root" type="Node2D"]
+texture_filter = 1
 
 [node name="Player" parent="." instance=ExtResource("1_pq8q7")]
 

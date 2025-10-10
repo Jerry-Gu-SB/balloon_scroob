@@ -8,15 +8,14 @@ const INPUT_MULTIPLYER = 2.5
 const MAX_SPEED = 250
 
 func update(input_vector : Vector2, character_body : CharacterBody2D) -> void:
-	# apply_impulse()
 	resolve_input(input_vector)
 	resolve_environmental_forces()
 	apply_physics(character_body)
-	return
 
 func apply_impulse(impulse_vector_normalized : Vector2, impulse_strength : float) -> void:
+	if not impulse_vector_normalized.is_normalized():
+		impulse_vector_normalized = impulse_vector_normalized.normalized()
 	velocity += impulse_vector_normalized * impulse_strength
-	return
 
 func resolve_input(input_vector : Vector2) -> void:
 	if abs(velocity[0]) < MAX_SPEED:

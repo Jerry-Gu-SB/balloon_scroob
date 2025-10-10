@@ -1,6 +1,5 @@
 extends Node
 
-@export var data : ProjectileData
 @onready var area2D : Area2D = $"../Area2D"
 
 func _ready() -> void:
@@ -8,5 +7,6 @@ func _ready() -> void:
 
 func on_body_entered(collision) -> void:
 	if collision.has_method("take_damage"):
-		collision.take_damage(data.damage)
+		var parent : ProjectileProvider = get_parent()
+		collision.take_damage(parent.get_projectile_data().damage)
 		queue_free()

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProjectileData" load_steps=3 format=3 uid="uid://bir5g4mwcydbv"]
+
+[ext_resource type="Script" uid="uid://bjgd0yderhrlv" path="res://Projectile/Resources/projectile_properties.gd" id="1_grrri"]
+[ext_resource type="Texture2D" uid="uid://bhw0rllwncrye" path="res://Projectile/Assets/Revolver - Colt 45/Bullet.png" id="2_grrri"]
+
+[resource]
+script = ExtResource("1_grrri")
+projectile_velocity = 750.0
+damage = 30
+sprite_texture = ExtResource("2_grrri")
+metadata/_custom_type_script = "uid://bjgd0yderhrlv"
