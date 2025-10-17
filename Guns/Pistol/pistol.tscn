@@ -11,6 +11,7 @@ script = ExtResource("1_5xv0r")
 gun_data = ExtResource("2_tjpvq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
 texture = ExtResource("3_vk0q8")
 script = ExtResource("4_h6l0j")
 

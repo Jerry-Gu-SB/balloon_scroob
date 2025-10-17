@@ -8,6 +8,6 @@ texture_filter = 1
 
 [node name="Player" parent="." instance=ExtResource("1_pq8q7")]
 
-[node name="Projectile Container" type="Node" parent="."]
-
 [node name="Map" parent="." instance=ExtResource("2_pyidc")]
+
+[node name="Projectile Container" type="Node" parent="."]
