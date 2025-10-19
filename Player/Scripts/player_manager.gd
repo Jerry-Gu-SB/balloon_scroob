@@ -4,7 +4,7 @@ extends Node2D
 @onready var physics_handler = $"Physics Handler"
 @onready var character_body = $"CharacterBody2D"
 @onready var weapon_socket = $"Weapon Socket"
-
+@onready var animated_sprite_2d : AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 var current_input : Vector2
 
 func _ready():
@@ -14,6 +14,9 @@ func _ready():
 	assert(physics_handler != null, "Missing node: Physics Handler")
 	assert(character_body != null, "Missing node: CharacterBody2D")
 	assert(weapon_socket != null, "Missing node: Weapon Socket")
+	assert(animated_sprite_2d != null, "Missing node: AnimatedSprite2D")
+	
+	animated_sprite_2d.play("idle")
 	
 func _process(_delta : float) -> void:
 	current_input = input_handler.update()

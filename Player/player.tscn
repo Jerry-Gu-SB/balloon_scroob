@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3253vymfgnrt"]
+[gd_scene load_steps=15 format=3 uid="uid://c3253vymfgnrt"]
 
 [ext_resource type="Script" uid="uid://j01nev2pnnox" path="res://Player/Scripts/player_input_handler.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d027m67k7cfdw" path="res://Player/Scripts/player_manager.gd" id="1_4ntmi"]
 [ext_resource type="Script" uid="uid://b477el4qtgib5" path="res://Player/Scripts/player_physics_handler.gd" id="3_btcbx"]
 [ext_resource type="PackedScene" uid="uid://b6blyfeog43lr" path="res://Guns/Revolver/revolver.tscn" id="3_od3ui"]
-[ext_resource type="Texture2D" uid="uid://w2uhhbv5dbc1" path="res://Player/Aesprite Files/Player_Balloon.png" id="4_od3ui"]
+[ext_resource type="Texture2D" uid="uid://cqgvo26iuu6ma" path="res://Player/Aesprite Files/Player_Balloon-Sheet.png" id="4_od3ui"]
 [ext_resource type="Script" uid="uid://do5lprfffkta8" path="res://Player/Scripts/player_weapon_socket.gd" id="4_vtle1"]
 [ext_resource type="Script" uid="uid://bb4o3ov63xsq1" path="res://Player/Scripts/player_aiming_reticle_sprite.gd" id="5_k53q1"]
 [ext_resource type="Texture2D" uid="uid://d0t215cctw73d" path="res://Player/Assets/Player_Reticle.svg" id="5_od3ui"]
@@ -12,6 +12,42 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btcbx"]
 radius = 7.0376105
 height = 21.694914
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00tjw"]
+atlas = ExtResource("4_od3ui")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3vf3"]
+atlas = ExtResource("4_od3ui")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apopc"]
+atlas = ExtResource("4_od3ui")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
+atlas = ExtResource("4_od3ui")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00tjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3vf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apopc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5htga")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
 
 [node name="Player" type="Node2D"]
 texture_filter = 1
@@ -30,9 +66,11 @@ position = Vector2(0, -7.9999995)
 scale = Vector2(2.26, 1.475)
 shape = SubResource("CapsuleShape2D_btcbx")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 z_index = -1
-texture = ExtResource("4_od3ui")
+sprite_frames = SubResource("SpriteFrames_p5o4e")
+animation = &"idle"
+frame_progress = 0.8881341
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -60)

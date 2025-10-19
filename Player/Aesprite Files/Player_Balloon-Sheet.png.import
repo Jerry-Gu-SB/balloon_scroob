@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w2uhhbv5dbc1"
-path="res://.godot/imported/Player_Balloon.png-f6afa13d93a572e7285c3b2d5c936cdc.ctex"
+uid="uid://cqgvo26iuu6ma"
+path="res://.godot/imported/Player_Balloon-Sheet.png-bfafbb594b658e2e6d85c2fa07aa09a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Aesprite Files/Player_Balloon.png"
-dest_files=["res://.godot/imported/Player_Balloon.png-f6afa13d93a572e7285c3b2d5c936cdc.ctex"]
+source_file="res://Player/Aesprite Files/Player_Balloon-Sheet.png"
+dest_files=["res://.godot/imported/Player_Balloon-Sheet.png-bfafbb594b658e2e6d85c2fa07aa09a8.ctex"]
 
 [params]
 
