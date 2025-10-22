@@ -54,7 +54,6 @@ texture_filter = 1
 script = ExtResource("1_4ntmi")
 
 [node name="Weapon Socket" type="Node2D" parent="."]
-position = Vector2(0, 14.94)
 script = ExtResource("4_vtle1")
 
 [node name="Revolver" parent="Weapon Socket" instance=ExtResource("3_od3ui")]

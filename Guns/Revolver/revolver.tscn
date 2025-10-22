@@ -8,9 +8,9 @@
 gun_data = ExtResource("2_5b321")
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, 0)
 texture = ExtResource("2_qqhwn")
-offset = Vector2(13.695, -4.98)
+offset = Vector2(8.5, 6)
+region_rect = Rect2(2, 11, 45, 18)
 
 [node name="Marker2D" parent="Sprite2D" index="0"]
-position = Vector2(28.8, -7.98)
+position = Vector2(31, -1)

@@ -6,4 +6,4 @@ func _ready() -> void:
 	
 func _process(_delta : float) -> void:
 	var mouse_position = get_global_mouse_position()
-	self.flip_v = mouse_position[0] < self.global_position[0]
+	self.scale.y = -1 if mouse_position[0] < self.global_position[0] else 1
