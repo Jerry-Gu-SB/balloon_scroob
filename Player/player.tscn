@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://j01nev2pnnox" path="res://Player/Scripts/player_input_handler.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d027m67k7cfdw" path="res://Player/Scripts/player_manager.gd" id="1_4ntmi"]
 [ext_resource type="Script" uid="uid://b477el4qtgib5" path="res://Player/Scripts/player_physics_handler.gd" id="3_btcbx"]
-[ext_resource type="PackedScene" uid="uid://b6blyfeog43lr" path="res://Guns/Revolver/revolver.tscn" id="3_od3ui"]
+[ext_resource type="PackedScene" uid="uid://ce1gxf8ua0txu" path="res://Guns/Pistol/pistol.tscn" id="3_od3ui"]
 [ext_resource type="Texture2D" uid="uid://cqgvo26iuu6ma" path="res://Player/Aesprite Files/Player_Balloon-Sheet.png" id="4_od3ui"]
 [ext_resource type="Script" uid="uid://do5lprfffkta8" path="res://Player/Scripts/player_weapon_socket.gd" id="4_vtle1"]
 [ext_resource type="Script" uid="uid://bb4o3ov63xsq1" path="res://Player/Scripts/player_aiming_reticle_sprite.gd" id="5_k53q1"]
@@ -56,7 +56,7 @@ script = ExtResource("1_4ntmi")
 [node name="Weapon Socket" type="Node2D" parent="."]
 script = ExtResource("4_vtle1")
 
-[node name="Revolver" parent="Weapon Socket" instance=ExtResource("3_od3ui")]
+[node name="Pistol" parent="Weapon Socket" instance=ExtResource("3_od3ui")]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
