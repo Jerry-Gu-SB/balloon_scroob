@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://ce1gxf8ua0txu"]
+[gd_scene load_steps=52 format=3 uid="uid://ce1gxf8ua0txu"]
 
 [ext_resource type="Script" uid="uid://bnexhvcro1c24" path="res://Guns/Pistol/gun_pistol_manager.gd" id="1_5xv0r"]
 [ext_resource type="Resource" uid="uid://fhsn1b5bckdt" path="res://Guns/Resources/gun_pistol.tres" id="2_tjpvq"]
@@ -11,10 +11,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6l0j"]
 atlas = ExtResource("4_vk0q8")
 region = Rect2(0, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xhpyn"]
-atlas = ExtResource("4_vk0q8")
-region = Rect2(64, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ni6ge"]
 atlas = ExtResource("4_vk0q8")
@@ -199,9 +195,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_h6l0j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xhpyn")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_ni6ge")
 }, {
 "duration": 1.0,
@@ -344,13 +337,11 @@ gun_data = ExtResource("2_tjpvq")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5xv0r")
 animation = &"fire"
-frame = 11
-frame_progress = 1.0
-offset = Vector2(7, 6)
+offset = Vector2(6, 11)
 script = ExtResource("4_h6l0j")
 
 [node name="Marker2D" type="Marker2D" parent="Sprite2D"]
-position = Vector2(23, -6)
+position = Vector2(22, 0)
 
 [node name="Firing Handler" type="Node" parent="." node_paths=PackedStringArray("fire_point")]
 script = ExtResource("5_xhpyn")
