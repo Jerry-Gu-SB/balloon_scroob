@@ -6,8 +6,11 @@ func _ready() -> void:
 	
 func _process(_delta : float) -> void:
 	var mouse_position = get_global_mouse_position()
-	self.scale.y = -1 if mouse_position[0] < self.global_position[0] else 1
-
+	
+	# Flip the gun sprite based on mouse orientation vs the player
+	if ((mouse_position[0] - self.global_position[0]) * self.scale.y) < 0:
+		self.scale.y *= -1
+		
 func process_left_click() -> void:
 	self.play("fire")
 	return
