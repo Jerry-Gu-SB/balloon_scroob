@@ -8,7 +8,7 @@ extends Node2D
 var current_input : Vector2
 
 func _ready():
-	EventBus.left_click.connect(process_left_click)
+	EventBus.fire_gun.connect(process_fire_gun)
 	
 	assert(input_handler != null, "Missing node: Input Handler")
 	assert(physics_handler != null, "Missing node: Physics Handler")
@@ -22,7 +22,7 @@ func _process(_delta : float) -> void:
 	current_input = input_handler.update()
 	physics_handler.update(current_input, character_body)
 
-func process_left_click() -> void:
+func process_fire_gun() -> void:
 	var weapon_data : GunData = weapon_socket.get_weapon_data()
 	assert(weapon_data != null, "Weapon data is null in player_manager.gd: process_left_click()")
 	

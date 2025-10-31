@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
 func _ready() -> void:	
-	EventBus.left_click.connect(process_left_click)
+	EventBus.fire_gun.connect(process_fire_gun)
 	animation_finished.connect(on_animation_finished)
 	
 func _process(_delta : float) -> void:
@@ -11,7 +11,7 @@ func _process(_delta : float) -> void:
 	if ((mouse_position[0] - self.global_position[0]) * self.scale.y) < 0:
 		self.scale.y *= -1
 		
-func process_left_click() -> void:
+func process_fire_gun() -> void:
 	self.play("fire")
 	return
 
