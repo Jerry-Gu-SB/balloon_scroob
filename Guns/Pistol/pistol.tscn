@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ce1gxf8ua0txu"]
+[gd_scene load_steps=49 format=3 uid="uid://ce1gxf8ua0txu"]
 
 [ext_resource type="Script" uid="uid://bnexhvcro1c24" path="res://Guns/Pistol/gun_pistol_manager.gd" id="1_5xv0r"]
 [ext_resource type="Resource" uid="uid://fhsn1b5bckdt" path="res://Guns/Resources/gun_pistol.tres" id="2_tjpvq"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c273tgubmuoax" path="res://Guns/Pistol/Glock - P80 [64x48]/[SHOOT WITH MUZZLE FLASH] Glock - P80.png" id="4_vk0q8"]
 [ext_resource type="Texture2D" uid="uid://b5tfkent8qpfc" path="res://Guns/Pistol/Glock - P80 [64x48]/[RELOAD] Glock - P80.png" id="5_vk0q8"]
 [ext_resource type="Script" uid="uid://dujjxfd7eannm" path="res://Guns/Scripts/gun_firing_handler.gd" id="5_xhpyn"]
+[ext_resource type="AudioStream" uid="uid://cyelev6vo81j5" path="res://Guns/Assets/layered-gunshots/128296__xenonn__layered-gunshot-0.wav" id="8_h6l0j"]
+[ext_resource type="Script" uid="uid://d1dkqcsnejjfg" path="res://Guns/Pistol/gun_audio_stream_players.gd" id="8_xhpyn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6l0j"]
 atlas = ExtResource("4_vk0q8")
@@ -312,3 +314,10 @@ position = Vector2(22, 0)
 [node name="Firing Handler" type="Node" parent="." node_paths=PackedStringArray("fire_point")]
 script = ExtResource("5_xhpyn")
 fire_point = NodePath("../Sprite2D/Marker2D")
+
+[node name="Audio Stream Players" type="Node" parent="."]
+script = ExtResource("8_xhpyn")
+
+[node name="GunShot" type="AudioStreamPlayer" parent="Audio Stream Players"]
+stream = ExtResource("8_h6l0j")
+volume_db = -25.0
