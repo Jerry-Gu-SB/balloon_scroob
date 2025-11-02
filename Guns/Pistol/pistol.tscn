@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://ce1gxf8ua0txu"]
+[gd_scene load_steps=47 format=3 uid="uid://ce1gxf8ua0txu"]
 
 [ext_resource type="Script" uid="uid://bnexhvcro1c24" path="res://Guns/Pistol/gun_pistol_manager.gd" id="1_5xv0r"]
 [ext_resource type="Resource" uid="uid://fhsn1b5bckdt" path="res://Guns/Resources/gun_pistol.tres" id="2_tjpvq"]
@@ -31,26 +31,6 @@ region = Rect2(320, 0, 64, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rothu"]
 atlas = ExtResource("4_vk0q8")
 region = Rect2(384, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cjxsj"]
-atlas = ExtResource("4_vk0q8")
-region = Rect2(448, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g0vd8"]
-atlas = ExtResource("4_vk0q8")
-region = Rect2(512, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tbso7"]
-atlas = ExtResource("4_vk0q8")
-region = Rect2(576, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktwb4"]
-atlas = ExtResource("4_vk0q8")
-region = Rect2(640, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xrpbm"]
-atlas = ExtResource("4_vk0q8")
-region = Rect2(704, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_27yl8"]
 atlas = ExtResource("5_vk0q8")
@@ -208,21 +188,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rothu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cjxsj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g0vd8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tbso7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ktwb4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xrpbm")
 }],
 "loop": false,
 "name": &"fire",
