@@ -4,5 +4,6 @@ extends Node
 signal left_click()
 signal reload()
 signal fire_gun()
+signal player_death()
 
 @warning_ignore_restore("unused_signal")
