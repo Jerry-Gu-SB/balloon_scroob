@@ -25,7 +25,6 @@ scale = Vector2(0.345, 0.345)
 shape = SubResource("CircleShape2D_wt2gt")
 
 [node name="Explosion Area" type="Area2D" parent="."]
-scale = Vector2(0.345, 0.345)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion Area"]
 shape = SubResource("CircleShape2D_ch1br")
@@ -38,5 +37,7 @@ script = ExtResource("3_cq2fg")
 [node name="Physics Handler" type="Node" parent="."]
 script = ExtResource("5_v5cwq")
 
-[node name="Collision Handler" type="Node" parent="."]
+[node name="Collision Handler" type="Node2D" parent="."]
 script = ExtResource("6_fnyh8")
+
+[connection signal="body_entered" from="Explosion Area" to="Collision Handler" method="_on_explosion_area_body_entered"]
