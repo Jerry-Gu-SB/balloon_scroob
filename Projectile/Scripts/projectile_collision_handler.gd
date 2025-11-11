@@ -4,11 +4,12 @@ extends Node2D
 
 var projectile_damage : int
 var tilemap: TileMapLayer
+var parent : ProjectileProvider
 
 const TILEMAP_LAYER_NAME := "Breakable Terrain"
 
 func _ready() -> void:	
-	var parent : ProjectileProvider = get_parent()
+	parent = get_parent()
 	projectile_damage = parent.get_projectile_data().damage
 
 	var game_root : Node2D = get_tree().root.get_node_or_null("Root")
@@ -29,7 +30,10 @@ func _on_explosion_area_body_entered(body: Node2D) -> void:
 		var tiles_hit = get_all_tiles_in_area()
 		print(tiles_hit)
 		body.take_damage_on_tiles(tiles_hit, projectile_damage)
-		#get_parent().queue_free()
+		parent.get_projectile_data().projectile_health -= 1
+		
+		if parent.get_projectile_data().projectile_health <= 0:
+			parent.queue_free()
 	
 func get_all_tiles_in_area() -> Array[Vector2i]:
 	var overlapping_tiles: Array[Vector2i] = []
@@ -43,12 +47,12 @@ func get_all_tiles_in_area() -> Array[Vector2i]:
 	var bottom_right = self.global_position + Vector2(radius, radius)
 
 	# --- 3. Convert to tile coordinates ---
-	var start := tilemap.local_to_map(tilemap.to_local(top_left))
-	var end := tilemap.local_to_map(tilemap.to_local(bottom_right))
+	var start : Vector2i = tilemap.local_to_map(tilemap.to_local(top_left))
+	var end : Vector2i = tilemap.local_to_map(tilemap.to_local(bottom_right))
 
 	# --- 4. Loop through all tiles within that box ---
-	for x in range(start.x, end.x + 1):
-		for y in range(start.y, end.y + 1):
+	for x in range(start.x - 1, end.x + 1):
+		for y in range(start.y - 1, end.y + 1):
 			var cell_pos : Vector2i = Vector2i(x, y)
 			var tile_id = tilemap.get_cell_source_id(cell_pos)
 			if tile_id == -1:
