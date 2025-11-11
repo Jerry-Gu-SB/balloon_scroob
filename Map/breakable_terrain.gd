@@ -1,4 +1,4 @@
-extends TileMapLayer
+extends Terrain
 class_name BreakableTerrain
 
 func take_damage_on_tiles(list_of_tiles : Array[Vector2i], damage : float) -> void:
