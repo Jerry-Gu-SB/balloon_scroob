@@ -18,10 +18,12 @@ projectile_data = ExtResource("4_773rv")
 [node name="Hurtbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(4, 0)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_ch1br")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
+scale = Vector2(4, 4)
 texture = ExtResource("2_r1tnx")
 script = ExtResource("3_cq2fg")
 

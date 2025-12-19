@@ -5,5 +5,6 @@ signal left_click()
 signal reload()
 signal fire_gun()
 signal player_death()
+signal change_wind(Vector2)
 
 @warning_ignore_restore("unused_signal")

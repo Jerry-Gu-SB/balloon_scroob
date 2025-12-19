@@ -10,7 +10,7 @@ func update() -> Vector2:
 	
 	return input_vector
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			EventBus.left_click.emit()
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventMouseButton and event.pressed:
+		#if event.button_index == MOUSE_BUTTON_LEFT:
+			#EventBus.left_click.emit()

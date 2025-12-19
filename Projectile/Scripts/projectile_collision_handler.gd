@@ -37,7 +37,7 @@ func get_all_tiles_in_area() -> Array[Vector2i]:
 	var overlapping_tiles: Array[Vector2i] = []
 	
 	# --- 1. Get the circle shape from the Area2D ---
-	var radius : float = 100
+	var radius : float = 10
 	
 	# --- 2. Compute a bounding box around the circle ---
 	var top_left = self.global_position - Vector2(radius, radius)

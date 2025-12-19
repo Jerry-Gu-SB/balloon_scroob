@@ -159,6 +159,7 @@ texture_filter = 1
 script = ExtResource("1_4ntmi")
 
 [node name="Weapon Socket" type="Node2D" parent="."]
+visible = false
 script = ExtResource("4_vtle1")
 
 [node name="Pistol" parent="Weapon Socket" instance=ExtResource("3_od3ui")]
@@ -184,6 +185,7 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="Aiming Reticle" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("5_od3ui")
 script = ExtResource("5_k53q1")
 
