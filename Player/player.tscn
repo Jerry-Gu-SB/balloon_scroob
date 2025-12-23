@@ -1,19 +1,17 @@
-[gd_scene load_steps=31 format=3 uid="uid://c3253vymfgnrt"]
+[gd_scene load_steps=33 format=3 uid="uid://c3253vymfgnrt"]
 
 [ext_resource type="Script" uid="uid://j01nev2pnnox" path="res://Player/Scripts/player_input_handler.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d027m67k7cfdw" path="res://Player/Scripts/player_manager.gd" id="1_4ntmi"]
 [ext_resource type="Script" uid="uid://b477el4qtgib5" path="res://Player/Scripts/player_physics_handler.gd" id="3_btcbx"]
 [ext_resource type="PackedScene" uid="uid://ce1gxf8ua0txu" path="res://Guns/Pistol/pistol.tscn" id="3_od3ui"]
 [ext_resource type="Texture2D" uid="uid://goo6rc8y8lj7" path="res://Player/Aesprite Files/Player_Balloon-Death-Sheet.png" id="4_00tjw"]
+[ext_resource type="Script" uid="uid://us6l6gt62gaf" path="res://Player/character_body_2d.gd" id="4_5htga"]
 [ext_resource type="Texture2D" uid="uid://cqgvo26iuu6ma" path="res://Player/Aesprite Files/Player_Balloon-Sheet.png" id="4_od3ui"]
 [ext_resource type="Script" uid="uid://do5lprfffkta8" path="res://Player/Scripts/player_weapon_socket.gd" id="4_vtle1"]
 [ext_resource type="Script" uid="uid://bb4o3ov63xsq1" path="res://Player/Scripts/player_aiming_reticle_sprite.gd" id="5_k53q1"]
 [ext_resource type="Texture2D" uid="uid://d0t215cctw73d" path="res://Player/Assets/Player_Reticle.svg" id="5_od3ui"]
 [ext_resource type="Script" uid="uid://c6t46nh3i2wlf" path="res://Player/Scripts/player_animated_sprite_2d.gd" id="6_x3vf3"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btcbx"]
-radius = 7.0376105
-height = 21.694914
+[ext_resource type="Script" uid="uid://cxbsg1r6s7ogc" path="res://Player/collision_handler.gd" id="11_apopc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5o4e"]
 atlas = ExtResource("4_00tjw")
@@ -154,6 +152,10 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btcbx"]
+radius = 7.0376105
+height = 21.694914
+
 [node name="Player" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_4ntmi")
@@ -166,11 +168,7 @@ script = ExtResource("4_vtle1")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 scale = Vector2(1.635, 1.635)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, -24.999998)
-scale = Vector2(2.26, 1.475)
-shape = SubResource("CapsuleShape2D_btcbx")
+script = ExtResource("4_5htga")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 z_index = -1
@@ -184,6 +182,11 @@ offset = Vector2(0, -60)
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -24.999998)
+scale = Vector2(2.26, 1.4749999)
+shape = SubResource("CapsuleShape2D_btcbx")
+
 [node name="Aiming Reticle" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("5_od3ui")
@@ -194,3 +197,6 @@ script = ExtResource("3_btcbx")
 
 [node name="Input Handler" type="Node2D" parent="."]
 script = ExtResource("1_4flbx")
+
+[node name="Collision Handler" type="Node" parent="."]
+script = ExtResource("11_apopc")

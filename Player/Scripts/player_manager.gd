@@ -20,7 +20,7 @@ func _ready():
 	
 func _process(_delta : float) -> void:
 	current_input = input_handler.update()
-	physics_handler.update(current_input, character_body)
+	physics_handler.update(current_input, character_body)	
 
 func process_fire_gun() -> void:
 	var weapon_data : GunData = weapon_socket.get_weapon_data()

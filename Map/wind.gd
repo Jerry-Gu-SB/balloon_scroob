@@ -6,7 +6,7 @@ var rng = RandomNumberGenerator.new()
 
 func _process(delta: float) -> void:
 	if timer <= 0:
-		set_wind(Vector2(rng.randf_range(-2.5, 2.5), rng.randf_range(-2.5, 2.5)))
+		set_wind(Vector2(rng.randf_range(-1, 1), rng.randf_range(-1, 1)))
 		timer = rng.randf_range(3, 10)
 	timer -= delta
 		
