@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c3253vymfgnrt"]
+[gd_scene load_steps=32 format=3 uid="uid://c3253vymfgnrt"]
 
 [ext_resource type="Script" uid="uid://j01nev2pnnox" path="res://Player/Scripts/player_input_handler.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d027m67k7cfdw" path="res://Player/Scripts/player_manager.gd" id="1_4ntmi"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://bb4o3ov63xsq1" path="res://Player/Scripts/player_aiming_reticle_sprite.gd" id="5_k53q1"]
 [ext_resource type="Texture2D" uid="uid://d0t215cctw73d" path="res://Player/Assets/Player_Reticle.svg" id="5_od3ui"]
 [ext_resource type="Script" uid="uid://c6t46nh3i2wlf" path="res://Player/Scripts/player_animated_sprite_2d.gd" id="6_x3vf3"]
-[ext_resource type="Script" uid="uid://cxbsg1r6s7ogc" path="res://Player/collision_handler.gd" id="11_apopc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5o4e"]
 atlas = ExtResource("4_00tjw")
@@ -168,13 +167,15 @@ script = ExtResource("4_vtle1")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 scale = Vector2(1.635, 1.635)
+collision_layer = 8
+collision_mask = 7
 script = ExtResource("4_5htga")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 z_index = -1
 position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"idle"
+animation = &"death"
 script = ExtResource("6_x3vf3")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -197,6 +198,3 @@ script = ExtResource("3_btcbx")
 
 [node name="Input Handler" type="Node2D" parent="."]
 script = ExtResource("1_4flbx")
-
-[node name="Collision Handler" type="Node" parent="."]
-script = ExtResource("11_apopc")

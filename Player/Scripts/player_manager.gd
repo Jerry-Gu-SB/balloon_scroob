@@ -9,6 +9,7 @@ var current_input : Vector2
 
 func _ready():
 	EventBus.fire_gun.connect(process_fire_gun)
+	EventBus.game_start.connect(process_game_start)
 	
 	assert(input_handler != null, "Missing node: Input Handler")
 	assert(physics_handler != null, "Missing node: Physics Handler")
@@ -28,3 +29,6 @@ func process_fire_gun() -> void:
 	
 	var recoil_direction : Vector2 = -Vector2.RIGHT.rotated(weapon_socket.global_rotation)
 	physics_handler.apply_impulse(recoil_direction.normalized(), weapon_data.recoil_strength)
+
+func process_game_start() -> void:
+	character_body.set_collision_layer_value(GlobalVariables.CollisionLayers.Hazards, true)
