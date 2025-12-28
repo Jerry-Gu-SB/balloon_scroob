@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dkm348765cq8n"]
+[gd_scene load_steps=12 format=4 uid="uid://dkm348765cq8n"]
 
 [ext_resource type="Texture2D" uid="uid://icvkwkyv720m" path="res://Map/Forest Tiles/Assets/Assets.png" id="1_17lxq"]
 [ext_resource type="Texture2D" uid="uid://bhdb5x6l52dks" path="res://Map/Forest Tiles/Assets/Background_2.png" id="1_2623n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://vbajix6slt0f" path="res://Map/Forest Tiles/Assets/Background_1.png" id="2_wgwpm"]
 [ext_resource type="Script" uid="uid://dgri6vyhf02ek" path="res://Map/terrain.gd" id="3_qtvud"]
 [ext_resource type="Script" uid="uid://bubce8nupqlru" path="res://Map/wind.gd" id="6_nyy2o"]
+[ext_resource type="PackedScene" uid="uid://dxgb28o687jvf" path="res://Checkpoint/checkpoint.tscn" id="7_ypc4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7s3fs"]
 texture = ExtResource("1_17lxq")
@@ -974,3 +975,6 @@ texture = ExtResource("2_wgwpm")
 
 [node name="Wind" type="Node" parent="."]
 script = ExtResource("6_nyy2o")
+
+[node name="Checkpoint" parent="." instance=ExtResource("7_ypc4v")]
+position = Vector2(-2, -176)

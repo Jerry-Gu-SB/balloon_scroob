@@ -32,3 +32,7 @@ func process_fire_gun() -> void:
 
 func process_game_start() -> void:
 	character_body.set_collision_layer_value(GlobalVariables.CollisionLayers.Hazards, true)
+
+
+func _on_death_animation_finished() -> void:
+	get_tree().change_scene_to_file("res://Menu/menu.tscn")
