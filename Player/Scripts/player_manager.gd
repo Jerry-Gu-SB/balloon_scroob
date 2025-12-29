@@ -5,6 +5,7 @@ extends Node2D
 @onready var character_body = $"CharacterBody2D"
 @onready var weapon_socket = $"Weapon Socket"
 @onready var animated_sprite_2d : AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+
 var current_input : Vector2
 
 func _ready():
@@ -33,6 +34,5 @@ func process_fire_gun() -> void:
 func process_game_start() -> void:
 	character_body.set_collision_layer_value(GlobalVariables.CollisionLayers.Hazards, true)
 
-
 func _on_death_animation_finished() -> void:
-	get_tree().change_scene_to_file("res://Menu/menu.tscn")
+	get_tree().change_scene_to_file("res://Menu/death_menu.tscn")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8xehs7aa55fw"]
+
+[ext_resource type="Script" uid="uid://g4cddk7hk18q" path="res://Menu/death_menu.gd" id="1_lsluq"]
+
+[node name="Death Menu" type="Node2D"]
+script = ExtResource("1_lsluq")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+offset_right = 256.0
+offset_bottom = 256.0
+alignment = 1
+vertical = true
+
+[node name="Main Menu" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Last Checkpoint" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Go Back to Last Checkpoint"
+
+[connection signal="pressed" from="BoxContainer/Main Menu" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="BoxContainer/Last Checkpoint" to="." method="_on_last_checkpoint_button_pressed"]

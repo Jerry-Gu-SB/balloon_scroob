@@ -13,3 +13,4 @@ func _on_body_entered(body: Node2D) -> void:
 		blue_flag_sprite.visible = false
 		gold_flag_sprite.visible = true
 		hit_vfx.play("default")
+	EventBus.emit_signal("checkpoint_reached", global_position)

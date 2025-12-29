@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckhv2ptxa6jbm"]
 
-[ext_resource type="Script" uid="uid://kxob5fem2mny" path="res://Menu/menu.gd" id="1_rwxi6"]
+[ext_resource type="Script" uid="uid://kxob5fem2mny" path="res://Menu/start_menu.gd" id="1_gnuge"]
 
 [node name="Menu" type="Node2D"]
-script = ExtResource("1_rwxi6")
+script = ExtResource("1_gnuge")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 offset_right = 256.0

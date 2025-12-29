@@ -7,5 +7,6 @@ signal fire_gun()
 signal player_death()
 signal change_wind(Vector2)
 signal game_start()
+signal checkpoint_reached(Vector2)
 
 @warning_ignore_restore("unused_signal")
