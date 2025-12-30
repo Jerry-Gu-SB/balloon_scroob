@@ -220,25 +220,28 @@ animations = [{
 [node name="Checkpoint" type="Node2D"]
 
 [node name="Blue_Flag_Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -16)
 sprite_frames = SubResource("SpriteFrames_660ni")
 frame_progress = 0.6876223
 
 [node name="Gold_Flag_Sprite" type="AnimatedSprite2D" parent="."]
 visible = false
+position = Vector2(5, -16)
 sprite_frames = SubResource("SpriteFrames_8ih4h")
 frame_progress = 0.3607033
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(5, -16)
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("3_76yq8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3, 2.5)
+position = Vector2(5, 3)
 shape = SubResource("RectangleShape2D_fmjbl")
 
 [node name="Hit Vfx" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -2)
+position = Vector2(7, -18)
 scale = Vector2(0.6308594, 0.5644531)
 sprite_frames = SubResource("SpriteFrames_ta8qc")
 frame = 14

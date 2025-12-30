@@ -6,3 +6,5 @@ enum CollisionLayers {
 	Breakables = 1 << 2, 
 	Player = 1 << 3,
 }
+
+var LastCheckpoint : Vector2 = Vector2(0, 0)

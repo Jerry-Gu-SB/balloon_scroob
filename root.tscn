@@ -7,9 +7,7 @@
 texture_filter = 1
 
 [node name="Player" parent="." instance=ExtResource("1_pq8q7")]
-position = Vector2(0, -25.455)
 
 [node name="Map" parent="." instance=ExtResource("2_pyidc")]
-position = Vector2(-5, -1)
 
 [node name="Projectile Container" type="Node" parent="."]
